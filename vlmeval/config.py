@@ -173,7 +173,8 @@ liquid_series = {
     'Liquid-343341': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_343341/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
     'Liquid-343003': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_343003/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
     'Liquid-342186': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_342186/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
-    'Liquid-OLD': partial(LIQUID_3Bv, model_path={"vlm_path": "/home/alex/devkit_/checkpoint-21000"})
+    'Liquid-OLD': partial(LIQUID_3Bv, model_path={"vlm_path_old": "/home/alex/devkit_/checkpoint-21000"}),
+    'Liquid-V0': partial(LIQUID_3Bv, model_path={"vlm_path": "/lambdafs/anna/checkpoints/new_repo_enc+proj_345206"})
 }
 
 internvl_series = {

@@ -98,7 +98,7 @@ class LIQUID_3Bv(BaseModel):
                 vlm.lfm.load_state_dict(lfm_state_dict, strict=True)
                 print("LFM loaded")
 
-            elif "vlm_path" in model_path:
+            elif "vlm_path_old" in model_path:
                 # Old initialization method
                 files = Path(model_path["vlm_path"]).glob("*.safetensors")
                 lfm_state_dict = {}
@@ -143,6 +143,14 @@ class LIQUID_3Bv(BaseModel):
                 print("LFM loaded")
             else:
                 raise ValueError("model_path dict must contain either 'vlm_path' or both 'state_dict_path' and 'lfm_path'")
+        elif "vlm_path" in model_path:
+            files = Path(model_path["vlm_path"]).glob("*.safetensors")
+            lfm_state_dict = {}
+            for file in files:
+                with safe_open(file, framework="pt") as state:
+                    for key in state.keys():  # noqa: SIM118
+                        lfm_state_dict[key] = state.get_tensor(key)
+            vlm.load_state_dict(lfm_state_dict, strict=True)
         else:
             raise ValueError("model_path must be a dictionary")
 
