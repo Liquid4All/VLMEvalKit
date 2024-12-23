@@ -31,7 +31,7 @@ class TextMCQDataset(TextBaseDataset):
         prompt += f'Question: {question}\n'
         if len(options):
             prompt += options_prompt
-            prompt += 'Please select the correct answer from the options above. \n'
+        prompt += 'Answer with the option\'s letter from the given choices directly.\n'
 
         msgs = []
 

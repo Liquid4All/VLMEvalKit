@@ -452,6 +452,10 @@ def extract_characters_regex(s, choices=['(A)', '(B)', '(C)', '(D)', '(E)']):
         'The correct option is',
         'Best answer:'
         'Best option:',
+        'answer:',
+        'Answer:',
+        'Option:',
+        'option:',
     ]
     for answer_prefix in answer_prefixes:
         s = s.replace(answer_prefix, '')

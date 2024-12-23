@@ -167,6 +167,15 @@ llava_series = {
     'llava_video_qwen2_72b':partial(LLaVA_OneVision, model_path='lmms-lab/LLaVA-Video-72B-Qwen2'),
 }
 
+liquid_series = {
+    'Liquid-343071': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_343071/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
+    'Liquid-342875': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_342875/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
+    'Liquid-343341': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_343341/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
+    'Liquid-343003': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_343003/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
+    'Liquid-342186': partial(LIQUID_3Bv, model_path={"state_dict_path": "/lambdafs/checkpoints/anna_lfm_mm_image_342186/model_optim_states/mp_rank_00_model_states.pt", "lfm_path": "/lambdafs/checkpoints/tim_lh3B_sft298860_dpo_dpoliquid3_config22_epoch2_338313_HF"}),
+    'Liquid-OLD': partial(LIQUID_3Bv, model_path={"vlm_path": "/home/alex/devkit_/checkpoint-21000"})
+}
+
 internvl_series = {
     'InternVL-Chat-V1-1': partial(InternVLChat, model_path='OpenGVLab/InternVL-Chat-V1-1', version='V1.1'),
     'InternVL-Chat-V1-2': partial(InternVLChat, model_path='OpenGVLab/InternVL-Chat-V1-2', version='V1.2'),
@@ -390,7 +399,7 @@ model_groups = [
     mantis_series, mmalaya_series, phi3_series, xgen_mm_series, qwen2vl_series, 
     slime_series, eagle_series, moondream_series, llama_series, molmo_series,
     kosmos_series, points_series, nvlm_series, vintern_series, h2ovl_series, aria_series,
-    smolvlm_series
+    smolvlm_series, liquid_series
 ]
 
 for grp in model_groups:
